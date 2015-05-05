@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>更实用的Seajs项目</title>
+    <style>
+        .txtStyle{
+            border:solid 1px #FF9E5B;
+            color:#4232FF;
+            position:absolute;
+            width:100px;
+            text-align:center;
+            background-color: #C6E746;
+        }
+
+    </style>
+</head>
+<body>
+<div id="greet" class="txtStyle">你好，世界</div>
+<script id='seajsnode'  src="js/lib/sea-debug-2.3.0.js"></script>
+<script>
+    seajs.config({
+        base: "./js/lib/",
+        alias: {
+            "jquery": "jquery-1.11.1.js"
+        },
+        debug:true
+    });
+
+    var ret = seajs.resolve('./js/lib/');
+
+    seajs.use(['./js/app/render'],function(){
+        console.log('加载完毕！');
+    });
+
+
+</script>
+</body>
+</html>
